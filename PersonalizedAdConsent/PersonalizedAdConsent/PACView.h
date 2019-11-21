@@ -15,7 +15,7 @@
 //
 
 #import "PACConsentForm.h"
-
+#import <Webkit/WebKit.h>
 typedef NSString *PACFormKey NS_STRING_ENUM;
 static PACFormKey const PACFormKeyOfferPersonalized = @"offer_personalized";
 static PACFormKey const PACFormKeyOfferNonPersonalized = @"offer_non_personalized";
@@ -27,7 +27,7 @@ static PACFormKey const PACFormKeyAppIcon = @"app_icon";
 static PACFormKey const PACFormKeyPlatform = @"plat";
 
 /// Loads and displays the consent form.
-@interface PACView : UIView<UIWebViewDelegate>
+@interface PACView : UIView<WKNavigationDelegate>
 @property(nonatomic, nullable) PACDismissCompletion dismissCompletion;
 @property(nonatomic) BOOL shouldNonPersonalizedAds;
 @property(nonatomic) BOOL shouldOfferAdFree;
